@@ -7,6 +7,11 @@ Power-Ups allow you to create re-usable [TALL Stack](https://tallstack.dev) comp
 
 Similar to how 🍄 **Power-Ups** help Mario complete a level, this package helps developers save time by providing a clear list of available [Tall Stack Components](https://laravel-livewire.com/docs/2.x/rendering-components) to choose from. Now, developers can build 🍄 Power-ups and easily re-use them in any another application.
 
+## Available Power-Ups
+
+    - 👋 [HelloWorld]  - Example power-up for learning purposes
+    - 📸 [MediaSelector] - Add an Emoji, Icon, or Image using the MediaSelector
+
 ## Installation
 
 You can install the package via composer:
