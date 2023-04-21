@@ -2,7 +2,9 @@
 
 namespace Foundationapp\PowerUps;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class PowerUpsServiceProvider extends ServiceProvider
 {
@@ -16,7 +18,8 @@ class PowerUpsServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'power-ups');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'power-ups');
+        // dd(__DIR__);
+        $this->loadViewsFrom(app_path('PowerUps/Components'), 'powerups');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         if ($this->app->runningInConsole()) {
@@ -46,6 +49,9 @@ class PowerUpsServiceProvider extends ServiceProvider
 
         // Load the activated power-ups
         $this->loadPowerUps();
+        //Livewire::component('powerup.hello-world', \App\PowerUps\Components\HelloWorld\HelloWorld::class);
+
+        
     }
 
     /**
@@ -67,7 +73,19 @@ class PowerUpsServiceProvider extends ServiceProvider
         $powerUpComponents = json_decode(file_get_contents($powerUpDirectory . '/components.json'), true);
         $powerUps = json_decode(file_get_contents($powerUpDirectory . '/powerup.json'), true);
         //
-        dd($powerUps);
+
+        foreach($powerUps['active'] as $powerUp){
+
+            //dd(\App\PowerUps\HelloWorld::class);
+            $className = ucfirst(Str::camel($powerUp));
+            $modelName = 'App\\PowerUps\\Components\\' . $className . '\\' . $className;
+            
+            //dd($modelName);
+            Livewire::component('powerup.' . $powerUp, $modelName);
+            //dd('powerup.' . $powerUp);
+            // dd(ucfirst(Str::camel($powerUp)));
+        }
+        // dd($powerUps);
         
     }
 }
