@@ -1,12 +1,12 @@
 # 🌟 Power-ups
 
-Power-ups allow you to create re-usable [Tallstack](https://tallstack.dev) components for any [Laravel](https://laravel.com) application.
+Power-ups allow you to create re-usable [TALL Stack](https://tallstack.dev) components for your [Laravel](https://laravel.com) applications.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
 [![Total Downloads](https://img.shields.io/packagist/dt/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
-![GitHub Actions](https://github.com/foundationapp/power-ups/actions/workflows/main.yml/badge.svg)
+# ![GitHub Actions](https://github.com/foundationapp/power-ups/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package provides an easy and efficient way to integrate [components](https://laravel-livewire.com/docs/2.x/rendering-components) into any application without the need for manual setup. It simplifies the installation process and helps developers save time by providing a clear list of available components to choose from. With this package, developers can build 🍄 Power-ups and easily re-use them in another [Tall Stack](https://tallstack.dev) application.
 
 ## Installation
 
@@ -18,8 +18,34 @@ composer require foundationapp/power-ups
 
 ## Usage
 
-```php
-// Usage description here
+After you include this package, you can see a list out all the available components by running the following command
+
+```bash
+php artisan powerup:list
+```
+
+To install any of the available components you can run:
+
+```bash
+php artisan powerup:install name-of-component
+```
+
+Then, you can enable it:
+
+```bash
+php artisan powerup:enable name-of-component
+``` 
+
+When a component is enabled, you can use it anywhere in your application:
+
+```html
+<livewire:powerup.name-of-component />
+```
+
+If you wish to disable the componet, you can simply run:
+
+```
+php artisan powerup:disable name-of-component
 ```
 
 ### Testing
