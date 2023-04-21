@@ -1,1 +1,1 @@
-# 🍄 Power-ups
+# 🌟 Power-ups
