@@ -18,7 +18,6 @@ class PowerUpsServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'power-ups');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'power-ups');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -42,7 +41,11 @@ class PowerUpsServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+
         }
+
+        // Load the activated power-ups
+        $this->loadPowerUps();
     }
 
     /**
@@ -50,7 +53,6 @@ class PowerUpsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        dd('cool');
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'power-ups');
 
@@ -58,5 +60,14 @@ class PowerUpsServiceProvider extends ServiceProvider
         $this->app->singleton('power-ups', function () {
             return new PowerUps;
         });
+    }
+
+    public function loadPowerUps(){
+        $powerUpDirectory = app_path('PowerUps');
+        $powerUpComponents = json_decode(file_get_contents($powerUpDirectory . '/components.json'), true);
+        $powerUps = json_decode(file_get_contents($powerUpDirectory . '/powerup.json'), true);
+        //
+        dd($powerUps);
+        
     }
 }
