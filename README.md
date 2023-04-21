@@ -9,8 +9,8 @@ Similar to how 🍄 **Power-Ups** help Mario complete a level, this package help
 
 ## Available Power-Ups
 
-    - 👋 [HelloWorld]  - Example power-up for learning purposes
-    - 📸 [MediaSelector] - Add an Emoji, Icon, or Image using the MediaSelector
+- 👋 [HelloWorld]  - Example power-up for learning purposes
+- 📸 [MediaSelector] - Add an Emoji, Icon, or Image using the MediaSelector
 
 ## Installation
 
