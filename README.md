@@ -4,7 +4,6 @@ Power-ups allow you to create re-usable [TALL Stack](https://tallstack.dev) comp
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
 [![Total Downloads](https://img.shields.io/packagist/dt/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
-# ![GitHub Actions](https://github.com/foundationapp/power-ups/actions/workflows/main.yml/badge.svg)
 
 This package provides an easy and efficient way to integrate [components](https://laravel-livewire.com/docs/2.x/rendering-components) into any application without the need for manual setup. It simplifies the installation process and helps developers save time by providing a clear list of available components to choose from. With this package, developers can build 🍄 Power-ups and easily re-use them in another [Tall Stack](https://tallstack.dev) application.
 
