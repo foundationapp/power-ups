@@ -1,6 +1,6 @@
 # 🌟 Power-Ups
 
-Power-Ups allow you to create re-usable [TALL Stack](https://tallstack.dev) components for your [Laravel](https://laravel.com) applications.
+Power-Ups allow developers to create re-usable [TALL Stack](https://tallstack.dev) components for [Laravel](https://laravel.com) applications.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
 [![Total Downloads](https://img.shields.io/packagist/dt/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
@@ -16,44 +16,53 @@ You can install the package via composer:
 composer require foundationapp/power-ups
 ```
 
-## Usage
-
-After you include this package, you can see a list out all the available components by running the following command
-
-```bash
-php artisan powerup:list
-```
-
-To install any of the available components you can run:
+After including the package, you can install any a **Power-Up** by running:
 
 ```bash
 php artisan powerup:install name-of-component
 ```
 
-Then, you can enable it:
+If we wanted to install the [https://github.com/foundationapp/hello-world](https://github.com/foundationapp/hello-world)] example, we would run: 
+
+```bash
+php artisan powerup:install foundationapp/hello-world
+```
+
+> You can install any power-up by passing the `vendor/repo` to the install command.
+
+## Usage
+
+After installing a power-up, you can enable it with:
 
 ```bash
 php artisan powerup:enable name-of-component
-``` 
+```
 
-When a component is enabled, you can use it anywhere in your application:
+and use it on any page:
 
-```html
+```
 <livewire:powerup.name-of-component />
 ```
 
-If you wish to disable the componet, you can simply run:
+You can see a list out all the installed **Power-Ups** by running the following command:
+
+```bash
+php artisan powerup:list
+```
+
+If you wish to disable or remove the Power-up, you may run the following commands accordingly:
 
 ```
 php artisan powerup:disable name-of-component
+php artisan powerup:remove name-of-component
 ```
 
-## Power-Ups
+## Available Power-Ups
 
-Here are a list of some available power-ups that you can use or you may choose to create your own.
+Here are a list of a some available Power-Ups you can use, or you can create your own.
 
-- 👋 [HelloWorld](https://github.com/foundationapp/HelloWorld)  - Example power-up for learning purposes
-- 📸 [MediaSelector](https://github.com/foundationapp/MediaSelector) - Add an Emoji, Icon, or Image using the MediaSelector
+- 👋 [Hello World](https://github.com/foundationapp/hello-world)  - Example power-up for learning purposes
+- 📸 [Media Selector](https://github.com/foundationapp/MediaSelector) - Add an Emoji, Icon, or Image using the MediaSelector
 
 ## Create Your Own Power-Ups
 
