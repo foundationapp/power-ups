@@ -62,7 +62,7 @@ php artisan powerup:remove name-of-component
 Here are a list of a some available Power-Ups you can use, or you can create your own.
 
 - 👋 [Hello World](https://github.com/foundationapp/hello-world)  - Example power-up for learning purposes
-- 📸 [Media Selector](https://github.com/foundationapp/MediaSelector) - Add an Emoji, Icon, or Image using the MediaSelector
+- 📸 [Media Selector](https://github.com/foundationapp/media-selector) - Add an Emoji, Icon, or Image using the MediaSelector
 
 ## Create Your Own Power-Ups
 
