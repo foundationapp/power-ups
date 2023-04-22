@@ -9,9 +9,8 @@ Similar to how 🍄 **Power-Ups** help Mario complete a level, this package help
 
 ## Available Power-Ups
 
-👋 [HelloWorld](https://github.com/foundationapp/HelloWorld)  - Example power-up for learning purposes
-
-📸 [MediaSelector](https://github.com/foundationapp/MediaSelector) - Add an Emoji, Icon, or Image using the MediaSelector
+- 👋 [HelloWorld](https://github.com/foundationapp/HelloWorld)  - Example power-up for learning purposes
+- 📸 [MediaSelector](https://github.com/foundationapp/MediaSelector) - Add an Emoji, Icon, or Image using the MediaSelector
 
 ## Installation
 
