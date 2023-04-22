@@ -2,6 +2,7 @@
 
 namespace Foundationapp\PowerUps;
 
+use Foundationapp\PowerUps\Helpers\PowerUpHelper;
 use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -47,10 +48,12 @@ class PowerUpsServiceProvider extends ServiceProvider
                 \Foundationapp\PowerUps\Console\Commands\PowerUpList::class,
                 \Foundationapp\PowerUps\Console\Commands\PowerUpEnable::class,
                 \Foundationapp\PowerUps\Console\Commands\PowerUpDisable::class,
+                \Foundationapp\PowerUps\Console\Commands\PowerUpInstall::class,
             ]);
 
         }
 
+        PowerUpHelper::createPowerUpFileAndFolders();
         // Load the activated power-ups
         $this->loadPowerUps();
 
