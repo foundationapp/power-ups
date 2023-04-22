@@ -43,13 +43,16 @@ class PowerUpsServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                \Foundationapp\PowerUps\Console\Commands\PowerUpList::class,
+                \Foundationapp\PowerUps\Console\Commands\PowerUpEnable::class,
+                \Foundationapp\PowerUps\Console\Commands\PowerUpDisable::class,
+            ]);
 
         }
 
         // Load the activated power-ups
         $this->loadPowerUps();
-        //Livewire::component('powerup.hello-world', \App\PowerUps\Components\HelloWorld\HelloWorld::class);
 
         
     }
@@ -72,20 +75,13 @@ class PowerUpsServiceProvider extends ServiceProvider
         $powerUpDirectory = app_path('PowerUps');
         $powerUpComponents = json_decode(file_get_contents($powerUpDirectory . '/components.json'), true);
         $powerUps = json_decode(file_get_contents($powerUpDirectory . '/powerup.json'), true);
-        //
 
+        // Dynamically Create each of the Power-ups as a Livewire component
         foreach($powerUps['active'] as $powerUp){
-
-            //dd(\App\PowerUps\HelloWorld::class);
             $className = ucfirst(Str::camel($powerUp));
             $modelName = 'App\\PowerUps\\Components\\' . $className . '\\' . $className;
-            
-            //dd($modelName);
             Livewire::component('powerup.' . $powerUp, $modelName);
-            //dd('powerup.' . $powerUp);
-            // dd(ucfirst(Str::camel($powerUp)));
         }
-        // dd($powerUps);
         
     }
 }
