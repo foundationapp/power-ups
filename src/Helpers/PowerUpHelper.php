@@ -17,13 +17,30 @@ class PowerUpHelper {
 
         // if the app_path('PowerUps/components.json') file does not exist, then create it
         if (!file_exists(app_path('PowerUps/components.json'))) {
-            file_put_contents(app_path('PowerUps/components.json'), '{}');
+            file_put_contents(app_path('PowerUps/components.json'), '{"installed": [], "active": []}');
+        }
+    }
+
+    public static function addPowerUpToComponentsJson($powerUp, $repo) {
+        $powerUpComponents = json_decode(file_get_contents(app_path('PowerUps') . '/components.json'), true);
+        $powerUpComponents[$powerUp] = $repo;
+        file_put_contents(app_path('PowerUps') . '/components.json', json_encode($powerUpComponents));
+    }
+
+    public static function installPowerUpInComponentsJson($slug, $name, $description, $version, $repo){
+        $powerUpComponents = json_decode(file_get_contents(app_path('PowerUps') . '/components.json'), true);
+        if(!isset($powerUpComponents['installed'])){
+            $powerUpComponents['installed'] = [];
         }
 
-        // if the app_path('PowerUps/powerup.json') file does not exist, then create it
-        if (!file_exists(app_path('PowerUps/powerup.json'))) {
-            file_put_contents(app_path('PowerUps/powerup.json'), '{"active": []}');
-        }
+        $powerUpComponents['installed'][$slug] = [
+            'name' => $name,
+            'description' => $description,
+            'version' => $version,
+            'repo' => $repo
+        ];
+
+        file_put_contents(app_path('PowerUps') . '/components.json', json_encode($powerUpComponents));
     }
 
 }

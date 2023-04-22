@@ -7,10 +7,6 @@ Power-Ups allow you to create re-usable [TALL Stack](https://tallstack.dev) comp
 
 Similar to how 🍄 **Power-Ups** help Mario complete a level, this package helps developers save time by providing a clear list of available [Tall Stack Components](https://laravel-livewire.com/docs/2.x/rendering-components) to choose from. Now, developers can build 🍄 Power-ups and easily re-use them in any another application.
 
-## Available Power-Ups
-
-- 👋 [HelloWorld](https://github.com/foundationapp/HelloWorld)  - Example power-up for learning purposes
-- 📸 [MediaSelector](https://github.com/foundationapp/MediaSelector) - Add an Emoji, Icon, or Image using the MediaSelector
 
 ## Installation
 
@@ -51,6 +47,17 @@ If you wish to disable the componet, you can simply run:
 ```
 php artisan powerup:disable name-of-component
 ```
+
+## Power-Ups
+
+Here are a list of some available power-ups that you can use or you may choose to create your own.
+
+- 👋 [HelloWorld](https://github.com/foundationapp/HelloWorld)  - Example power-up for learning purposes
+- 📸 [MediaSelector](https://github.com/foundationapp/MediaSelector) - Add an Emoji, Icon, or Image using the MediaSelector
+
+## Create Your Own Power-Ups
+
+If you wish to create your own Power-Up, you can easily copy the HelloWorld example and create your own. This will allow you to convert any existing Livewire component and turn it into your own **Power-Up** that can be used across all your apps.
 
 ### Testing
 

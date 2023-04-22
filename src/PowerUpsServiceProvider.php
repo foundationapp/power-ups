@@ -76,8 +76,7 @@ class PowerUpsServiceProvider extends ServiceProvider
 
     public function loadPowerUps(){
         $powerUpDirectory = app_path('PowerUps');
-        $powerUpComponents = json_decode(file_get_contents($powerUpDirectory . '/components.json'), true);
-        $powerUps = json_decode(file_get_contents($powerUpDirectory . '/powerup.json'), true);
+        $powerUps = json_decode(file_get_contents($powerUpDirectory . '/components.json'), true);
 
         // Dynamically Create each of the Power-ups as a Livewire component
         foreach($powerUps['active'] as $powerUp){

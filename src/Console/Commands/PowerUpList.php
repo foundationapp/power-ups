@@ -26,12 +26,11 @@ class PowerUpList extends Command
     public function handle()
     {
         $powerUpComponents = json_decode(file_get_contents(app_path('PowerUps') . '/components.json'), true);
-        $powerUps = json_decode(file_get_contents(app_path('PowerUps') . '/powerup.json'), true);
 
         $powerUpArray = [];
-        foreach($powerUpComponents as $key => $powerUp){
+        foreach($powerUpComponents['installed'] as $key => $powerUp){
             $enabled = true;
-            if(!in_array($key, $powerUps['active'])){
+            if(!in_array($key, $powerUpComponents['active'])){
                 $enabled = false;
             }
             array_push($powerUpArray, [ $key, ($enabled) ? 'Enabled' : 'Disabled', '<livewire:powerup.' . $key . ' />' ]);

@@ -27,7 +27,7 @@ class PowerUpEnable extends Command
     public function handle()
     {
         $powerUp = $this->argument('powerup');
-        $powerUps = json_decode(file_get_contents(app_path('PowerUps') . '/powerup.json'), true);
+        $powerUps = json_decode(file_get_contents(app_path('PowerUps') . '/components.json'), true);
 
         $powerUpName = ucfirst(Str::camel($powerUp));
         
@@ -36,7 +36,7 @@ class PowerUpEnable extends Command
             $this->info($powerUpName . ' Power-Up is already enabled');
         } else {
             $powerUps['active'][] = $powerUp;
-            file_put_contents(app_path('PowerUps') . '/powerup.json', json_encode($powerUps));
+            file_put_contents(app_path('PowerUps') . '/components.json', json_encode($powerUps));
             $this->info($powerUpName . ' Power-Up enabled');
             $this->line('Use by adding <livewire:powerup.' . $powerUp . ' /> to any view');
         }
