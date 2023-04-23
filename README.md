@@ -21,10 +21,10 @@ composer require foundationapp/power-ups
 After including the package, you can install any a **Power-Up** by running:
 
 ```bash
-php artisan powerup:install name-of-component
+php artisan powerup:install vendor/repo
 ```
 
-If we wanted to install the [https://github.com/foundationapp/hello-world](https://github.com/foundationapp/hello-world)] example, we would run: 
+If we wanted to install the [https://github.com/foundationapp/hello-world](https://github.com/foundationapp/hello-world) example, we would run: 
 
 ```bash
 php artisan powerup:install foundationapp/hello-world
