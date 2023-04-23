@@ -18,7 +18,7 @@ You can install the package via composer:
 composer require foundationapp/power-ups
 ```
 
-After including the package, you can install any a **Power-Up** by running:
+After including the package, you can install any **Power-Up** by running:
 
 ```bash
 php artisan powerup:install vendor/repo
