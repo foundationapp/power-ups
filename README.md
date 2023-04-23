@@ -2,6 +2,8 @@
 
 Power-Ups allow developers to create re-usable [TALL Stack](https://tallstack.dev) components for [Laravel](https://laravel.com) applications.
 
+![Power-Ups Image](/assets/img/power-ups-image.jpg)
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
 [![Total Downloads](https://img.shields.io/packagist/dt/foundationapp/power-ups.svg?style=flat-square)](https://packagist.org/packages/foundationapp/power-ups)
 
