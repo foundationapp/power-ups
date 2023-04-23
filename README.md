@@ -1,4 +1,4 @@
-# 🌟 Power-Ups
+# ⚡️ Power-Ups
 
 Power-Ups allow developers to create re-usable [TALL Stack](https://tallstack.dev) components for [Laravel](https://laravel.com) applications.
 
